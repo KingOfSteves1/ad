@@ -26,7 +26,10 @@ def enter():
     print("--------------------")
     print("Welcome to Hard Game")
     print("--------------------")
-    t.sleep(1.5)
+    t.sleep(2.45)
+    print("make sure to round logically")
+    t.sleep(.1)
+    os.system('cls')
     route=int(input("Choose a route: 1=bad 2=good 3=neutral:\n"))
     #secret route
     if route ==4:
@@ -64,9 +67,10 @@ def mazegame():
         print("--------------------------")
         t.sleep(2)
         print("You find yourself inside of a maze.\nYou have 3 options forward(1), right(2) and left(3).")
-        c=input("")
         rmc=r.randint(1,3)
-        if c==rmc:
+        print(rmc)
+        c=input("")
+        if c==str(rmc):
             rmc=r.randint(1,3)
             print("You got it right!")
             t.sleep(1)
@@ -76,7 +80,7 @@ def mazegame():
             print("-----------")
             print("You have 3 options forward(1), right(2) and left(3).")
             c=input("")
-            if c==rmc:
+            if c==str(rmc):
                 rmc=r.randint(1,3)
                 print("You got it right!")
                 t.sleep(1)
@@ -86,7 +90,7 @@ def mazegame():
                 print("-----------")
                 print("You have 3 options forward(1), right(2) and left(3).")
                 c=input("")
-                if c==rmc:
+                if c==str(rmc):
                     rmc=r.randint(1,3)
                     print("You got it right!")
                     t.sleep(1)
@@ -96,7 +100,7 @@ def mazegame():
                     print("-----------")
                     print("You have 3 options forward(1), right(2) and left(3).")
                     c=input("")
-                    if c==rmc:
+                    if c==str(rmc):
                         rmc=r.randint(1,3)
                         print("You got it right!")
                         t.sleep(1)
@@ -106,7 +110,7 @@ def mazegame():
                         print("-----------")
                         print("You have 3 options forward(1), right(2) and left(3).")
                         c=input("")
-                        if c==rmc:
+                        if c==str(rmc):
                             print("You got it right!")
                             t.sleep(1)
                             print("You finished the maze!")
@@ -161,13 +165,15 @@ def women():
                 print("You rolled a "+str(c)+", which is greater than that of 5, you live.")
                 print("-------------------------------------------------------------------")
                 c=r.randint(1,20)
-                if c<=10:
+                print(c)
+                if c<=15:
                     pdeath="no rizz"
                     death()
                 else:
                     print("You rolled a "+str(c)+", which is greater then that of 10, you live.")
                     print("--------------------------------------------------------------------")
                     c=r.randint(1,20)
+                    print(c)
                     if c<=19:
                         pdeath="You suck at gambling"
                         death()
@@ -176,7 +182,31 @@ def women():
         else:
             pdeath="why did u do this"
             death()
+    else:
+        pdeath ="you brought this upon urself"
+        death()
 def slep():
+    os.system('cls')
     global pdeath
-    
-enter()
+    print("Answer this question:")
+    qa = int(input("1 + 4 + 2 + 7 + 9 + 65 + 3 + 2 / 8 + 23 - 2 * 2 + 2 + 76 / 2 = "))
+    if qa==150:
+        print("Big brian")
+        t.sleep(2)
+        print("time for a patience challenge")
+        t.sleep(2)
+        print("reddy go")
+        os.system('cls')
+        t.sleep(1)
+        c=0
+        while c<=100:
+            c+=1
+            print("tick | "+str(c))
+            t.sleep(1)
+            
+            os.system('cls')
+            c+=1
+            print("tock | "+str(c))
+            t.sleep(1)
+            os.system('cls')
+slep()
