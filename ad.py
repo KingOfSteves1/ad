@@ -13,7 +13,7 @@ def death():
     print("--------------")
     print("You have died from "+pdeath+".")
     print("--------------")
-    t.sleep(3)
+    t.sleep(5)
     enter()
 def enter():
     global cmaze
@@ -39,6 +39,7 @@ def enter():
             t.sleep(2)
             print("Just kidding.")
             t.sleep(1.5)
+            pdeath="no reason just because u need to die and never choose this choice again because u are de big gei"
             death()
     #BAD ROUTE
     elif route ==1:
@@ -128,5 +129,54 @@ def mazegame():
             death()    
 
 def women():
-    print("womnen")
+    global pdeath
+    c = input("Do u like women??\nyes|no\n")
+    if c=="yes":
+        print("Women")
+        t.sleep(1000)
+        pdeath="old age"
+        death()
+    elif c=="no":
+        print("You are diagnosed with the big gei")
+        print("----------------------------------")
+        t.sleep(2.5)
+        print("You have been approached by a group of women.")
+        print("---------------------------------------------")
+        t.sleep(2.5)
+        print("You must now roll 3 times with a d20 die with varying requirements of Rizz.")
+        print("---------------------------------------------------------------------------")
+        t.sleep(3)
+        c = input("Do you wish to proceed?\ny|n\n")
+        if c =="n":
+            pdeath = "Lack of Courage, you then keel over and died"
+            death()
+        elif c =="y":
+            c=r.randint(1,20)
+            print(c)
+            t.sleep(2)
+            if c <= 5:
+                pdeath = "Lack of Rizz"
+                death()
+            else:
+                print("You rolled a "+str(c)+", which is greater than that of 5, you live.")
+                print("-------------------------------------------------------------------")
+                c=r.randint(1,20)
+                if c<=10:
+                    pdeath="no rizz"
+                    death()
+                else:
+                    print("You rolled a "+str(c)+", which is greater then that of 10, you live.")
+                    print("--------------------------------------------------------------------")
+                    c=r.randint(1,20)
+                    if c<=19:
+                        pdeath="You suck at gambling"
+                        death()
+                    else:
+                        slep()
+        else:
+            pdeath="why did u do this"
+            death()
+def slep():
+    global pdeath
+    
 enter()
