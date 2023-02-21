@@ -199,14 +199,18 @@ def slep():
         os.system('cls')
         t.sleep(1)
         c=0
-        while c<=100:
+        while c<100:
             c+=1
             print("tick | "+str(c))
             t.sleep(1)
-            
+            if c==69:
+                print("nice")
             os.system('cls')
             c+=1
             print("tock | "+str(c))
             t.sleep(1)
+            if c==69:
+                print("nice")
             os.system('cls')
+
 slep()
