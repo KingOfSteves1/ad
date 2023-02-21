@@ -1,6 +1,6 @@
 import time as t
 import os
-import random
+import random as r
 #vars
 
 cmaze=False
@@ -64,9 +64,9 @@ def mazegame():
         t.sleep(2)
         print("You find yourself inside of a maze.\nYou have 3 options forward(1), right(2) and left(3).")
         c=input("")
-        rmc=random.randint(1,3)
+        rmc=r.randint(1,3)
         if c==rmc:
-            rmc=random.randint(1,3)
+            rmc=r.randint(1,3)
             print("You got it right!")
             t.sleep(1)
             print("-----------")
@@ -76,7 +76,7 @@ def mazegame():
             print("You have 3 options forward(1), right(2) and left(3).")
             c=input("")
             if c==rmc:
-                rmc=random.randint(1,3)
+                rmc=r.randint(1,3)
                 print("You got it right!")
                 t.sleep(1)
                 print("-----------")
@@ -86,7 +86,7 @@ def mazegame():
                 print("You have 3 options forward(1), right(2) and left(3).")
                 c=input("")
                 if c==rmc:
-                    rmc=random.randint(1,3)
+                    rmc=r.randint(1,3)
                     print("You got it right!")
                     t.sleep(1)
                     print("-----------")
@@ -96,7 +96,7 @@ def mazegame():
                     print("You have 3 options forward(1), right(2) and left(3).")
                     c=input("")
                     if c==rmc:
-                        rmc=random.randint(1,3)
+                        rmc=r.randint(1,3)
                         print("You got it right!")
                         t.sleep(1)
                         print("-----------")
