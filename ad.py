@@ -186,7 +186,6 @@ def women():
         pdeath ="you brought this upon urself"
         death()
 def slepp():
-    global cmaze
     global pdeath
     print("--------------------------")
     print("You have entered THE BEDROOM!")
