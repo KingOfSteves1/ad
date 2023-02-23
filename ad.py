@@ -59,7 +59,7 @@ def enter():
     else:
         pdeath="chosing a boring routes"
         death()
-
+#first part of game
 def mazegame():
     global cmaze
     global pdeath
@@ -136,7 +136,73 @@ def mazegame():
         else:
             pdeath = "spider wraps you up and slowy devours your corpse"
             death()    
+#manager attack
+def attack():
+    global pdeath
+    print("You've summoned the casino manager!")
+    t.sleep(1)
+    print("You see him start to attack from below.\n What do you do?")
+    c=input("Up(1) Down(2) Slash(3) Poke(4) Run(5)\n")
+    if c=="1":
+        print("You manage to slice him from above!")
+        t.sleep(1)
+        print("You see him try to poke you! What do you do?")
+        c=input("Down(2) Slash(3) Poke(4) Run(5)\n")
+        if c=="2":
+            print("You die!")
+            pdeath = "poked by manager"
+            death()
+        elif c=="3":
+            print("You manage to slash him!")
+            t.sleep(1)
+            print("You see him try to attack from above! What do you do?")
+            
+            c=input("Down(2) Slash(3) Run(5)\n")
+            if c=="2":
+                print("You manage to slash him!")
+                t.sleep(1)
+                print("You defeated the Manager!")
+                #win
+                t.sleep(1)
+                print("You finally beat THE HARD GAME!(The cowards way)")
+                print("------------------------------------------------")
+                print("Haha just kidding.")
+                c=input("Wanna play it for real? y | n\n")
+                if c=="y":
+                    cmaze=False
+                    rizz=False
+                    enter()
+                else:
+                    pdeath = "ur bad"
+                    death()
 
+            elif c=="3":
+                print("You die!")
+                pdeath = "attacked from above"
+                death()
+            else:
+                print("OK then. Weird. Start over.")
+                attack()
+        elif c=="4":
+            print("You manage to deflect his attack! Try again!")
+            attack()
+        else:
+            print("OK then. Weird. Start over.")
+            attack()
+    elif c=="2":
+        print("You deflected his attack! Try again!")
+        attack()
+    elif c=="3":
+        print("You deflected his attack! Try again!")
+        attack()
+    elif c=="4":
+        print("You die!")
+        pdeath="sliced by manager"
+        death()
+    else:
+        print("OK then. Weird.")
+        attack()
+#next part of game
 def women():
     global rizz
     global pdeath
@@ -158,6 +224,7 @@ def women():
         t.sleep(2.5)
         print("You must now roll 3 times with a d20 die with varying requirements of Rizz.")
         print("---------------------------------------------------------------------------")
+        #dicestuff
         t.sleep(3)
         c = input("Do you wish to proceed?\ny|n\n")
         if c =="n":
@@ -196,8 +263,10 @@ def women():
                     c=r.randint(1,20)
                     print(c)
                     if c<=19:
-                        pdeath="you suck at gambling"
-                        death()
+                        print("you suck at gambling \nNow you must fight the casino")
+                        attack()
+                        
+                        
                     else:
                         slepp()
         else:
@@ -206,6 +275,7 @@ def women():
     else:
         pdeath ="you brought this upon urself"
         death()
+#next phase of game
 def slepp():
     global pdeath
     global cmaze
@@ -237,10 +307,11 @@ def slepp():
             if c==69:
                 print("nice")
             os.system('cls')
-        print("You finnaly beat THE HARD GAME!")
+            #beat game
+        print("You finally beat THE HARD GAME!")
         print("-------------------------------")
         print("Haha just kidding.")
-        c=input("Wanna play it for real? y | n")
+        c=input("Wanna play it for real? y | n\n")
         if c=="y":
             cmaze=False
             rizz=False
@@ -252,4 +323,4 @@ def slepp():
         pdeath = "you cant breath you dead boi"
         death()
 
-enter()
+attack()
