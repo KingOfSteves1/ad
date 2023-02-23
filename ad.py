@@ -178,7 +178,7 @@ def women():
                         pdeath="You suck at gambling"
                         death()
                     else:
-                        slep()
+                        slepp()
         else:
             pdeath="why did u do this"
             death()
