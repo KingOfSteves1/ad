@@ -4,6 +4,7 @@ import random as r
 #vars
 
 cmaze=False
+rizz = False
 pdeath=""
 #functions
 
@@ -17,6 +18,7 @@ def death():
     enter()
 def enter():
     global cmaze
+    global rizz
     global pdeath
     os.system('cls')
     c=""
@@ -26,9 +28,7 @@ def enter():
     print("--------------------")
     print("Welcome to Hard Game")
     print("--------------------")
-    t.sleep(2.45)
-    print("make sure to round logically")
-    t.sleep(.1)
+    t.sleep(1.5)
     os.system('cls')
     route=int(input("Choose a route: 1=bad 2=good 3=neutral:\n"))
     #secret route
@@ -44,6 +44,12 @@ def enter():
             t.sleep(1.5)
             pdeath="no reason just because u need to die and never choose this choice again because u are de big gei"
             death()
+    elif route ==69:
+        rizz =True
+        print("nice")
+        t.sleep(1)
+        pdeath = "niice"
+        death()
     #BAD ROUTE
     elif route ==1:
         maze=True
@@ -68,7 +74,6 @@ def mazegame():
         t.sleep(2)
         print("You find yourself inside of a maze.\nYou have 3 options forward(1), right(2) and left(3).")
         rmc=r.randint(1,3)
-        print(rmc)
         c=input("")
         if c==str(rmc):
             rmc=r.randint(1,3)
@@ -133,11 +138,15 @@ def mazegame():
             death()    
 
 def women():
+    global rizz
     global pdeath
     c = input("Do u like women??\nyes|no\n")
-    if c=="yes":
+    if rizz ==True:
+        print("You finished the women via cheating!")
+        slepp()
+    elif c=="yes":
         print("Women")
-        t.sleep(1000)
+        t.sleep(10)
         pdeath="old age"
         death()
     elif c=="no":
@@ -155,6 +164,10 @@ def women():
             pdeath = "Lack of Courage, you then keel over and died"
             death()
         elif c =="y":
+            t.sleep(2)
+            print("You need to roll above a 5.")
+            print("---------------------------")
+            t.sleep(1)
             c=r.randint(1,20)
             print(c)
             t.sleep(2)
@@ -164,18 +177,26 @@ def women():
             else:
                 print("You rolled a "+str(c)+", which is greater than that of 5, you live.")
                 print("-------------------------------------------------------------------")
+                t.sleep(2)
+                print("You need to roll above a 15.")
+                print("----------------------------")
+                t.sleep(2)
                 c=r.randint(1,20)
                 print(c)
                 if c<=15:
                     pdeath="no rizz"
                     death()
                 else:
-                    print("You rolled a "+str(c)+", which is greater then that of 10, you live.")
+                    print("You rolled a "+str(c)+", which is greater then that of 15, you live.")
                     print("--------------------------------------------------------------------")
+                    t.sleep(2)
+                    print("You need to roll a 20.")
+                    print("----------------------")
+                    t.sleep(2)
                     c=r.randint(1,20)
                     print(c)
                     if c<=19:
-                        pdeath="You suck at gambling"
+                        pdeath="you suck at gambling"
                         death()
                     else:
                         slepp()
@@ -187,13 +208,16 @@ def women():
         death()
 def slepp():
     global pdeath
+    global cmaze
+    global rizz
     print("--------------------------")
     print("You have entered THE BEDROOM!")
     print("--------------------------")
     t.sleep(2)
+    rb = r.randint(1,8)
     print("You have 8 options on your side(1), on your back(2) on your face(3) on your feet(4) crisscross apple sauce (5) on a plane (WITH SNAKES)(6) with eyes open(7) Smelling like cheese(8).")
     z=input("")
-    if z == "6":
+    if str(z) == rb:
         print("time for a patience challenge")
         t.sleep(2)
         print("reddy go")
@@ -213,6 +237,17 @@ def slepp():
             if c==69:
                 print("nice")
             os.system('cls')
+        print("You finnaly beat THE HARD GAME!")
+        print("-------------------------------")
+        print("Haha just kidding.")
+        c=input("Wanna play it for real? y | n")
+        if c=="y":
+            cmaze=False
+            rizz=False
+            enter()
+        else:
+            pdeath = "ur bad"
+            death()
     else:
         pdeath = "you cant breath you dead boi"
         death()
