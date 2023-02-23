@@ -185,21 +185,23 @@ def women():
     else:
         pdeath ="you brought this upon urself"
         death()
-def slep():
-    os.system('cls')
+def slepp():
+    global cmaze
     global pdeath
-    print("Answer this question:")
-    qa = int(input("1 + 4 + 2 + 7 + 9 + 65 + 3 + 2 / 8 + 23 - 2 * 2 + 2 + 76 / 2 = "))
-    if qa==150:
-        print("Big brian")
-        t.sleep(2)
+    print("--------------------------")
+    print("You have entered THE BEDROOM!")
+    print("--------------------------")
+    t.sleep(2)
+    print("You have 8 options on your side(1), on your back(2) on your face(3) on your feet(4) crisscross apple sauce (5) on a plane (WITH SNAKES)(6) with eyes open(7) Smelling like cheese(8).")
+    z=input("")
+    if z == "6":
         print("time for a patience challenge")
         t.sleep(2)
         print("reddy go")
         os.system('cls')
         t.sleep(1)
         c=0
-        while c<100:
+        while c<400:
             c+=1
             print("tick | "+str(c))
             t.sleep(1)
@@ -212,5 +214,8 @@ def slep():
             if c==69:
                 print("nice")
             os.system('cls')
+    else:
+        pdeath = "you cant breath you dead boi"
+        death()
 
-slep()
+enter()
