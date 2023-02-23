@@ -59,7 +59,7 @@ def enter():
     else:
         pdeath="chosing a boring routes"
         death()
-#first part of game
+#First Part, the Maze
 def mazegame():
     global cmaze
     global pdeath
@@ -136,7 +136,7 @@ def mazegame():
         else:
             pdeath = "spider wraps you up and slowy devours your corpse"
             death()    
-#manager attack
+#Boss Fight against Manager
 def attack():
     global pdeath
     print("You've summoned the casino manager!")
@@ -202,7 +202,7 @@ def attack():
     else:
         print("OK then. Weird.")
         attack()
-#next part of game
+#Women Phase of the Game
 def women():
     global rizz
     global pdeath
@@ -275,7 +275,7 @@ def women():
     else:
         pdeath ="you brought this upon urself"
         death()
-#next phase of game
+#Sleeping Phase of the Game, the Patience
 def slepp():
     global pdeath
     global cmaze
